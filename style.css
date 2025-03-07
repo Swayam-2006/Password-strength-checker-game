@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: #080a1a;
+    color: #ffcc00;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 204, 0, 0.1);
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+h1 {
+    font-size: 24px;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+button {
+    background: black;
+    color: #ffcc00;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #ffcc00;
+    color: black;
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+#game-area {
+    margin-top: 20px;
+}
+
+#feedback {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
