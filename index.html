@@ -15,15 +15,18 @@
         <button onclick="startGame(1)">Set 1</button>
         <button onclick="startGame(2)">Set 2</button>
         <button onclick="startGame(3)">Set 3</button>
-        
-        <div id="game-area" style="display: none;">
-            <p id="password-display">Password: </p>
-            <button onclick="checkStrength('easy')">Easy</button>
-            <button onclick="checkStrength('moderate')">Moderate</button>
-            <button onclick="checkStrength('strong')">Strong</button>
-            <p id="score-display"></p>
-        </div>
-        
+      </div>
+    
+      <div id="game-area" class="container" style="display: none;">
+        <h1>Password Strength Game</h1>
+        <p id="intro-message">To win, you must score at least 12/15!</p>
+
+        <p id="password-display">Password: </p>
+        <button onclick="checkStrength('easy')">Easy</button>
+        <button onclick="checkStrength('moderate')">Moderate</button>
+        <button onclick="checkStrength('strong')">Strong</button>
+
+        <p id="score-display"></p>
     </div>
 
     <script src="script.js"></script>
