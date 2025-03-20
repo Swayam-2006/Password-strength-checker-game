@@ -1,5 +1,5 @@
 const passwords = {
-    1: [ 
+    1: [
         { password: "12345", strength: "easy" },
         { password: "abcdef", strength: "easy" },
         { password: "qwerty", strength: "easy" },
@@ -57,14 +57,16 @@ let currentPasswordIndex = 0;
 let score = 0;
 
 function startGame(setNumber) {
-    currentSet = [...passwords[setNumber]]; 
+    console.log("Game started with set:", setNumber);
+
+    currentSet = [...passwords[setNumber]];
     currentPasswordIndex = 0;
     score = 0;
 
     document.getElementById("set-selection").style.display = "none";
     document.getElementById("game-area").style.display = "block";
-    document.getElementById("score-display").innerText = "";
 
+    document.getElementById("score-display").innerText = "";
     showNextPassword();
 }
 
@@ -96,9 +98,6 @@ function checkStrength(selectedStrength) {
 function endGame() {
     document.getElementById("password-display").innerText = "";
 
-    if (score >= 12) {
-        document.getElementById("score-display").innerText = `🎉 Congratulations! You passed! Your score: ${score} / 15`;
-    } else {
-        document.getElementById("score-display").innerText = `❌ Game Over! You needed 12 to pass. Your score: ${score} / 15`;
-    }
+    let message = score >= 12 ? `🎉 You passed! Score: ${score}/15` : `❌ Game Over! Score: ${score}/15`;
+    document.getElementById("score-display").innerText = message;
 }
