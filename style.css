@@ -18,8 +18,8 @@ body {
 }
 
 .container {
-    width: 75%; /* Occupy 75% of the page width */
-    height: 75vh; /* Occupy 75% of the viewport height */
+    width: 75vw; /* 75% of the viewport width */
+    height: 75vh; /* 75% of the viewport height */
     background: rgba(255, 204, 0, 0.1);
     border: 2px solid #ffcc00;
     border-radius: 10px;
@@ -29,6 +29,10 @@ body {
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h1 {
@@ -62,6 +66,7 @@ button:hover {
 }
 
 #game-area {
+    width: 100%;
     margin-top: 20px;
 }
 
