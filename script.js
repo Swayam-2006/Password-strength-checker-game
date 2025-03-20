@@ -1,5 +1,5 @@
 const passwords = {
-    1: [ // Set 1
+    1: [ 
         { password: "12345", strength: "easy" },
         { password: "abcdef", strength: "easy" },
         { password: "qwerty", strength: "easy" },
@@ -16,7 +16,7 @@ const passwords = {
         { password: "Passw0rd$", strength: "strong" },
         { password: "Z9x#P!3l", strength: "strong" }
     ],
-    2: [ // Set 2
+    2: [
         { password: "admin", strength: "easy" },
         { password: "password123", strength: "easy" },
         { password: "abc123", strength: "easy" },
@@ -33,7 +33,7 @@ const passwords = {
         { password: "MyP@ssw0rdIsStrong!", strength: "strong" },
         { password: "T!gerF@ce12", strength: "strong" }
     ],
-    3: [ // Set 3
+    3: [
         { password: "guest", strength: "easy" },
         { password: "letmein", strength: "easy" },
         { password: "monkey", strength: "easy" },
@@ -52,18 +52,20 @@ const passwords = {
     ]
 };
 
-
 let currentSet = [];
 let currentPasswordIndex = 0;
 let score = 0;
 
 function startGame(setNumber) {
-    currentSet = [...passwords[setNumber]]; // Clone the set to avoid modifying original
+    currentSet = [...passwords[setNumber]]; 
     currentPasswordIndex = 0;
     score = 0;
-    showNextPassword();
+
+    document.getElementById("set-selection").style.display = "none";
     document.getElementById("game-area").style.display = "block";
-    document.getElementById("score-display").innerText = ""; // Reset score display
+    document.getElementById("score-display").innerText = "";
+
+    showNextPassword();
 }
 
 function showNextPassword() {
@@ -93,5 +95,10 @@ function checkStrength(selectedStrength) {
 
 function endGame() {
     document.getElementById("password-display").innerText = "";
-    document.getElementById("score-display").innerText = `Game Over! Your score: ${score} / 15`;
+
+    if (score >= 12) {
+        document.getElementById("score-display").innerText = `🎉 Congratulations! You passed! Your score: ${score} / 15`;
+    } else {
+        document.getElementById("score-display").innerText = `❌ Game Over! You needed 12 to pass. Your score: ${score} / 15`;
+    }
 }
