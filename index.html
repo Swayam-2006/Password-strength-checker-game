@@ -8,14 +8,15 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Password Strength Checker</h1>
-        <p>Select a set to start:</p>
-        
-        <button onclick="startGame(1)">Set 1</button>
-        <button onclick="startGame(2)">Set 2</button>
-        <button onclick="startGame(3)">Set 3</button>
-      </div>
+   <div id="set-selection" class="container">  <!-- Added id="set-selection" -->
+    <h1>Password Strength Checker</h1>
+    <p>Select a set to start:</p>
+    
+    <button onclick="startGame(1)">Set 1</button>
+    <button onclick="startGame(2)">Set 2</button>
+    <button onclick="startGame(3)">Set 3</button>
+</div>
+
     
       <div id="game-area" class="container" style="display: none;">
         <h1>Password Strength Game</h1>
