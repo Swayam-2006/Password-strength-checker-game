@@ -57,11 +57,16 @@ let currentPasswordIndex = 0;
 let score = 0;
 
 function shuffleArray(array) {
-    return array.sort(() => Math.random() - 0.5);
+    return array.slice().sort(() => Math.random() - 0.5);
 }
 
 function selectSet(setNumber) {
-    currentSet = shuffleArray([...passwords[setNumber]]);
+    if (!passwords[setNumber]) {
+        console.error("Invalid set number selected");
+        return;
+    }
+
+    currentSet = shuffleArray(passwords[setNumber]);
     currentPasswordIndex = 0;
     score = 0;
 
@@ -70,6 +75,11 @@ function selectSet(setNumber) {
 }
 
 function startGame() {
+    if (currentSet.length === 0) {
+        console.error("No password set selected");
+        return;
+    }
+
     document.getElementById("start-page").style.display = "none";
     document.getElementById("game-area").style.display = "block";
     showNextPassword();
@@ -78,13 +88,15 @@ function startGame() {
 function showNextPassword() {
     if (currentPasswordIndex < currentSet.length) {
         document.getElementById("password-display").innerText = 
-            "Password: " + currentSet[currentPasswordIndex].password;
+            `Password: ${currentSet[currentPasswordIndex].password}`;
     } else {
         endGame();
     }
 }
 
 function checkStrength(selectedStrength) {
+    if (currentSet.length === 0) return;
+
     if (selectedStrength === currentSet[currentPasswordIndex].strength) {
         score++;
     }
@@ -102,4 +114,6 @@ function endGame() {
     document.getElementById("password-display").innerText = "";
     document.getElementById("score-display").innerText = 
         score >= 12 ? `🎉 You passed! Score: ${score}/15` : `❌ Game Over! Score: ${score}/15`;
+    
+    document.getElementById("game-area").style.display = "none"; // Hide game UI after game ends
 }
