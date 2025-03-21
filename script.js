@@ -117,12 +117,13 @@ function endGame() {
     document.getElementById("button-container").style.display = "none"; // Hide buttons
 
     setTimeout(() => {
+        let message = `❌ Game Over! Score: ${score}/15`;
+
         if (score >= 12) {
-            document.getElementById("score-display").innerHTML = 
-                `🎉 You passed! Score: ${score}/15 <br><br> 🏆 Your unique keyword: <strong>${secretKeyword}</strong>`;
-        } else {
-            document.getElementById("score-display").innerText = 
-                `❌ Game Over! Score: ${score}/15`;
+            message = `🎉 You passed! Score: ${score}/15 <br><br> 🏆 Your unique keyword: <strong>${secretKeyword}</strong>`;
         }
+
+        document.getElementById("score-display").innerHTML = message;
     }, 500); // Small delay for better UX
 }
+
