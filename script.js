@@ -61,42 +61,38 @@ function shuffleArray(array) {
 }
 
 function startGame(setNumber) {
-    console.log("Game started with set:", setNumber);
-
     currentSet = shuffleArray([...passwords[setNumber]]);
     currentPasswordIndex = 0;
     score = 0;
 
     document.getElementById("set-selection").style.display = "none";
     document.getElementById("game-area").style.display = "block";
-
-    document.getElementById("intro-message").style.display = "block"; // Show intro message
-    document.getElementById("password-display").innerText = ""; // Hide password initially
+    
+    document.getElementById("intro-message").style.display = "block";
+    document.getElementById("password-display").innerText = "";
     document.getElementById("score-display").innerText = "";
 
-    document.getElementById("start-btn").style.display = "block"; // Show start button
+    document.getElementById("start-btn").style.display = "block";
 }
 
 function beginGame() {
-    document.getElementById("intro-message").style.display = "none"; // Hide intro message
-    document.getElementById("start-btn").style.display = "none"; // Hide start button
+    document.getElementById("intro-message").style.display = "none";
+    document.getElementById("start-btn").style.display = "none";
 
     showNextPassword();
 }
 
 function showNextPassword() {
     if (currentPasswordIndex < currentSet.length) {
-        let currentPassword = currentSet[currentPasswordIndex];
-        document.getElementById("password-display").innerText = "Password: " + currentPassword.password;
+        document.getElementById("password-display").innerText = 
+            "Password: " + currentSet[currentPasswordIndex].password;
     } else {
         endGame();
     }
 }
 
 function checkStrength(selectedStrength) {
-    let currentPassword = currentSet[currentPasswordIndex];
-
-    if (selectedStrength === currentPassword.strength) {
+    if (selectedStrength === currentSet[currentPasswordIndex].strength) {
         score++;
     }
 
@@ -111,7 +107,6 @@ function checkStrength(selectedStrength) {
 
 function endGame() {
     document.getElementById("password-display").innerText = "";
-
-    let message = score >= 12 ? `🎉 You passed! Score: ${score}/15` : `❌ Game Over! Score: ${score}/15`;
-    document.getElementById("score-display").innerText = message;
+    document.getElementById("score-display").innerText = 
+        score >= 12 ? `🎉 You passed! Score: ${score}/15` : `❌ Game Over! Score: ${score}/15`;
 }
