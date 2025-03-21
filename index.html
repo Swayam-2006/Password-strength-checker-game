@@ -8,22 +8,26 @@
 </head>
 <body>
 
-    <!-- Set Selection -->
+    <!-- Set Selection Page -->
     <div class="container" id="set-selection">
         <h1>Password Strength Checker</h1>
         <p>Select a set to start:</p>
         
-        <button onclick="startGame(1)">Set 1</button>
-        <button onclick="startGame(2)">Set 2</button>
-        <button onclick="startGame(3)">Set 3</button>
+        <button onclick="selectSet(1)">Set 1</button>
+        <button onclick="selectSet(2)">Set 2</button>
+        <button onclick="selectSet(3)">Set 3</button>
     </div>
     
-    <!-- Game Area -->
+    <!-- Start Game Page -->
+    <div id="start-page" class="container" style="display: none;">
+        <h1>Password Strength Game</h1>
+        <p>To pass, you must score at least 12 out of 15!</p>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <!-- Game Page -->
     <div id="game-area" class="container" style="display: none;">
         <h1>Password Strength Game</h1>
-        <p id="intro-message">To pass, you must score at least 12/15!</p>
-        <button id="start-btn" onclick="beginGame()">Start Game</button>
-
         <p id="password-display"></p>
         
         <div id="button-container">
