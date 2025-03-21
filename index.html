@@ -8,36 +8,38 @@
 </head>
 <body>
 
-    <!-- Set Selection Page -->
-    <div class="container" id="set-selection">
-        <h1>Password Strength Checker</h1>
-        <p>Select a set to start:</p>
+    <div id="game-container">
+        <!-- Set Selection Page -->
+        <div class="container" id="set-selection">
+            <h1>Password Strength Checker</h1>
+            <p>Select a set to start:</p>
+            
+            <button onclick="selectSet(1)">Set 1</button>
+            <button onclick="selectSet(2)">Set 2</button>
+            <button onclick="selectSet(3)">Set 3</button>
+        </div>
         
-        <button onclick="selectSet(1)">Set 1</button>
-        <button onclick="selectSet(2)">Set 2</button>
-        <button onclick="selectSet(3)">Set 3</button>
-    </div>
-    
-    <!-- Start Game Page -->
-    <div id="start-page" class="container" style="display: none;">
-        <h1>Password Strength Game</h1>
-        <p>To pass, you must score at least 12 out of 15!</p>
-        <button onclick="startGame()">Start Game</button>
-    </div>
-
-    <!-- Game Page -->
-    <div id="game-area" class="container" style="display: none;">
-        <h1>Password Strength Game</h1>
-        <p id="password-display">Password: P@$$w0rd123</p>
-
-        <!-- Centered Buttons -->
-        <div id="button-container">
-            <button onclick="checkStrength('easy')">Easy</button>
-            <button onclick="checkStrength('moderate')">Moderate</button>
-            <button onclick="checkStrength('strong')">Strong</button>
+        <!-- Start Game Page -->
+        <div id="start-page" class="container" style="display: none;">
+            <h1>Password Strength Game</h1>
+            <p>To pass, you must score at least 12 out of 15!</p>
+            <button onclick="startGame()">Start Game</button>
         </div>
 
-        <p id="score-display"></p>
+        <!-- Game Page -->
+        <div id="game-area" class="container" style="display: none;">
+            <h1>Password Strength Game</h1>
+            <p id="password-display">Password: P@$$w0rd123</p>
+
+            <!-- Centered Buttons -->
+            <div id="button-container">
+                <button onclick="checkStrength('easy')">Easy</button>
+                <button onclick="checkStrength('moderate')">Moderate</button>
+                <button onclick="checkStrength('strong')">Strong</button>
+            </div>
+
+            <p id="score-display"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
