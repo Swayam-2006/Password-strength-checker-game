@@ -71,11 +71,11 @@ function startGame(setNumber) {
     document.getElementById("game-area").style.display = "block";
 
     document.getElementById("intro-message").style.display = "block"; // Show intro message
-    document.getElementById("password-display").innerText = ""; // Hide password initially
+    document.getElementById("password-display").innerText = "Get ready..."; // Show placeholder text
     document.getElementById("score-display").innerText = "";
 
     setTimeout(() => {
-        document.getElementById("intro-message").style.display = "none"; // Hide intro message after 2 seconds
+        document.getElementById("intro-message").style.display = "none"; // Hide intro message
         showNextPassword();
     }, 2000);
 }
