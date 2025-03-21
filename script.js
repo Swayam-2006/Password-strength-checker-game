@@ -55,6 +55,7 @@ const passwords = {
 let currentSet = [];
 let currentPasswordIndex = 0;
 let score = 0;
+const secretKeyword = "SECURE1234"; // Unique keyword
 
 function shuffleArray(array) {
     return array.slice().sort(() => Math.random() - 0.5);
@@ -116,7 +117,12 @@ function endGame() {
     document.getElementById("button-container").style.display = "none"; // Hide buttons
 
     setTimeout(() => {
-        document.getElementById("score-display").innerText = 
-            score >= 12 ? `🎉 You passed! Score: ${score}/15` : `❌ Game Over! Score: ${score}/15`;
+        if (score >= 12) {
+            document.getElementById("score-display").innerHTML = 
+                `🎉 You passed! Score: ${score}/15 <br><br> 🏆 Your unique keyword: <strong>${secretKeyword}</strong>`;
+        } else {
+            document.getElementById("score-display").innerText = 
+                `❌ Game Over! Score: ${score}/15`;
+        }
     }, 500); // Small delay for better UX
 }
