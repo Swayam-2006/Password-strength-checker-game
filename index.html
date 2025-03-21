@@ -19,12 +19,14 @@
     
     <div id="game-area" class="container" style="display: none;">
         <h1>Password Strength Game</h1>
-        <p id="intro-message">To pass, you must score at least 12/15!</p>
+        <p id="intro-message" style="display: none;">To pass, you must score at least 12/15!</p>
 
-        <p id="password-display">Password: </p>
-        <button onclick="checkStrength('easy')">Easy</button>
-        <button onclick="checkStrength('moderate')">Moderate</button>
-        <button onclick="checkStrength('strong')">Strong</button>
+        <p id="password-display"></p>
+        <div id="button-container">
+            <button onclick="checkStrength('easy')">Easy</button>
+            <button onclick="checkStrength('moderate')">Moderate</button>
+            <button onclick="checkStrength('strong')">Strong</button>
+        </div>
 
         <p id="score-display"></p>
     </div>
