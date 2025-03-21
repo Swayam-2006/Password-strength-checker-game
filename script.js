@@ -56,18 +56,28 @@ let currentSet = [];
 let currentPasswordIndex = 0;
 let score = 0;
 
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
 function startGame(setNumber) {
     console.log("Game started with set:", setNumber);
 
-    currentSet = [...passwords[setNumber]];
+    currentSet = shuffleArray([...passwords[setNumber]]);
     currentPasswordIndex = 0;
     score = 0;
 
     document.getElementById("set-selection").style.display = "none";
     document.getElementById("game-area").style.display = "block";
 
+    document.getElementById("intro-message").style.display = "block"; // Show intro message
+    document.getElementById("password-display").innerText = ""; // Hide password initially
     document.getElementById("score-display").innerText = "";
-    showNextPassword();
+
+    setTimeout(() => {
+        document.getElementById("intro-message").style.display = "none"; // Hide intro message after 2 seconds
+        showNextPassword();
+    }, 2000);
 }
 
 function showNextPassword() {
