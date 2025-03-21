@@ -60,25 +60,18 @@ function shuffleArray(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-function startGame(setNumber) {
+function selectSet(setNumber) {
     currentSet = shuffleArray([...passwords[setNumber]]);
     currentPasswordIndex = 0;
     score = 0;
 
     document.getElementById("set-selection").style.display = "none";
-    document.getElementById("game-area").style.display = "block";
-    
-    document.getElementById("intro-message").style.display = "block";
-    document.getElementById("password-display").innerText = "";
-    document.getElementById("score-display").innerText = "";
-
-    document.getElementById("start-btn").style.display = "block";
+    document.getElementById("start-page").style.display = "block";
 }
 
-function beginGame() {
-    document.getElementById("intro-message").style.display = "none";
-    document.getElementById("start-btn").style.display = "none";
-
+function startGame() {
+    document.getElementById("start-page").style.display = "none";
+    document.getElementById("game-area").style.display = "block";
     showNextPassword();
 }
 
