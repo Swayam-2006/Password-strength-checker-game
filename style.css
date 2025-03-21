@@ -29,21 +29,19 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 h1 {
     font-size: 32px;
     text-shadow: 0 0 10px #ffcc00;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 p {
     font-size: 20px;
     margin: 10px 0;
+    line-height: 1.4;
 }
 
 button {
@@ -66,7 +64,8 @@ button:hover {
     box-shadow: 0 0 10px #ffcc00;
 }
 
-#password-display, #score-display {
+#password-display,
+#score-display {
     font-size: 24px;
     font-weight: bold;
     margin: 15px 0;
