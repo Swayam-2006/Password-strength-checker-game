@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Strength Checker</title>
+    <title>Password Strength Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Set Selection -->
     <div class="container" id="set-selection">
         <h1>Password Strength Checker</h1>
         <p>Select a set to start:</p>
@@ -17,12 +18,14 @@
         <button onclick="startGame(3)">Set 3</button>
     </div>
     
+    <!-- Game Area -->
     <div id="game-area" class="container" style="display: none;">
         <h1>Password Strength Game</h1>
         <p id="intro-message">To pass, you must score at least 12/15!</p>
         <button id="start-btn" onclick="beginGame()">Start Game</button>
 
         <p id="password-display"></p>
+        
         <div id="button-container">
             <button onclick="checkStrength('easy')">Easy</button>
             <button onclick="checkStrength('moderate')">Moderate</button>
