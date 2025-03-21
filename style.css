@@ -26,7 +26,7 @@ body {
     box-shadow: 0 0 15px #ffcc00;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Ensures all elements inside are centered */
     align-items: center;
     padding: 30px;
 }
@@ -64,7 +64,7 @@ button:hover {
     box-shadow: 0 0 10px #ffcc00;
 }
 
-/* Ensure buttons are centered properly */
+/* ✅ Centering the buttons properly */
 #button-container {
     display: flex;
     flex-direction: row; /* Ensures buttons are in a row */
@@ -72,7 +72,5 @@ button:hover {
     align-items: center; /* Centers buttons vertically */
     gap: 20px; /* Spacing between buttons */
     width: 100%;
-    margin-top: 20px;
-    position: absolute;
-    bottom: 20%;
+    margin-top: 30px; /* Added spacing from the password display */
 }
