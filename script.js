@@ -82,8 +82,7 @@ function startGame() {
 
     document.getElementById("start-page").style.display = "none";
     document.getElementById("game-area").style.display = "block";
-    document.getElementById("button-container").style.display = "flex"; // Ensure buttons are visible
-    updateScore(); // Initialize score display
+    document.getElementById("button-container").style.display = "flex"; // Show buttons
     showNextPassword();
 }
 
@@ -104,7 +103,6 @@ function checkStrength(selectedStrength) {
     }
 
     currentPasswordIndex++;
-    updateScore(); // Update score dynamically after each selection
 
     if (currentPasswordIndex < currentSet.length) {
         showNextPassword();
@@ -113,14 +111,12 @@ function checkStrength(selectedStrength) {
     }
 }
 
-function updateScore() {
-    document.getElementById("score-display").innerText = `Score: ${score}/${currentSet.length}`;
-}
-
 function endGame() {
     document.getElementById("password-display").innerText = "";
-    document.getElementById("score-display").innerText = 
-        score >= 12 ? `🎉 You passed! Score: ${score}/15` : `❌ Game Over! Score: ${score}/15`;
-    
     document.getElementById("button-container").style.display = "none"; // Hide buttons
+
+    setTimeout(() => {
+        document.getElementById("score-display").innerText = 
+            score >= 12 ? `🎉 You passed! Score: ${score}/15` : `❌ Game Over! Score: ${score}/15`;
+    }, 500); // Small delay for better UX
 }
