@@ -126,4 +126,3 @@ function endGame() {
         document.getElementById("score-display").innerHTML = message;
     }, 500); // Small delay for better UX
 }
-
